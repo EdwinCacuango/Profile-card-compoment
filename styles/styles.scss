@@ -1,54 +1,102 @@
 @import "variables";
 @import "globals";
 
-.card-component{
-    max-width: 20.3125rem;  
-    margin-top: 9.375rem;
-    margin-left: auto;  
-    margin-right: auto;
+main{
+  display: grid;
+}
+.circles-bg, .card{
+  grid-column: 1;
+  grid-row: 1;
 }
 
-
-
-.profile-image{
-    display: grid;
-
-    .bg-image, .photo-profile{
-        grid-column: 1;
-        grid-row: 1;
-        max-width: 100%;
+.circles-bg {
+  overflow: hidden;
+  .circle{
+    max-width: 100%;
+  }
+  .top{
+    margin-top:-50%;
+    margin-left: -50%;
+  }
+  .bottom{
+    margin-bottom: -150%;
+    margin-right: -150%;
+  }
+  @media (min-width:600px) {
+    @include flexCenter(row);
+    .top{
+      margin-top:-50%;
+      margin-left: -50%;
+      
     }
-    .bg-image{
-        border-radius: 0.625rem 0.625rem 0 0;
-        background-image: cover;
+    .bottom{
+     margin-right: -50%;
+     margin-bottom: -50%;
     }
-    .photo-profile{
-        border-radius: 50%;
-        border: 5px solid white;
-        align-self: center;
-        justify-self: center;
-        margin-top: 5.3125rem;
-    }
+  }
+}
+.card{
+  @include flexCenter(row)
+}
+.card-component {
+  max-width: 20.3125rem;
 }
 
+.profile-image {
+  display: grid;
+  .bg-image,
+  .photo-profile {
+    grid-column: 1;
+    grid-row: 1;
+    max-width: 100%;
+  }
+  .bg-image {
+    border-radius: 0.625rem 0.625rem 0 0;
+    background-image: cover;
+  }
+  .photo-profile {
+    border-radius: 50%;
+    border: 5px solid white;
+    align-self: center;
+    justify-self: center;
+    margin-top: 5.3125rem;
+  }
+}
+.text-card {
+  background-color: white;
+  margin-top: -5.3125rem;
+  border-radius: 0 0 0.625rem 0.625rem;
+  @include flexCenter(column);
+  h1 {
+    @include titles();
+    margin-top: 5.3125rem;
+    margin-bottom: 1rem;
+  }
+  .age {
+    font-weight: 400;
+    color: $dark-gray;
+  }
+  .city {
+    margin-top: 0;
+    margin-bottom: 1.875rem;
+    font-size: 1rem;
+    text-align: center;
+  }
 
-
-.text-card{
-    background-color: white;
-    margin-top:-5.3125rem;
-    border-radius: 0 0 0.625rem 0.625rem;
-    @include flexCenter(column);
-    
-    h1{
-        padding-top: 3.8125rem;
+  .counter-card {
+    width: 100%;
+    @include flexCenter(row, space-between);
+    padding: 1.75rem;
+    border-top: 1px solid #d5d3d3;
+    .single-counter {
+      h2,
+      p {
+        text-align: center;
+        margin: 0;
+      }
+      h2 {
+        color: $very-dark-desaturated-blue;
+      }
     }
-    .age{
-        color:$dark-gray;
-    }
-
-    .counter-card{
-        @include flexCenter(row);
-        border-top: 1px solid $dark-grayish-blue;
-
-    }
+  }
 }

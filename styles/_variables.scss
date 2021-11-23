@@ -8,14 +8,13 @@ $principal-f:'Kumbh Sans', sans-serif;
 
 @mixin titles() {
     font-weight: 700;
-    font-size: 18.125rem;
-    // color:$dark-gray;
+    font-size: 1.8125rem;
+    color:$very-dark-desaturated-blue;
 }
 
-@mixin flexCenter($direction) {
+@mixin flexCenter($direction, $horizontal:center) {
     display: flex;
-    justify-content: center;
+    justify-content: $horizontal;
     align-items: center;
-    flex-direction: $direction;
-    
+    flex-direction: $direction;    
 }
