@@ -1,3 +1,54 @@
 @import "variables";
 @import "globals";
 
+.card-component{
+    max-width: 20.3125rem;  
+    margin-top: 9.375rem;
+    margin-left: auto;  
+    margin-right: auto;
+}
+
+
+
+.profile-image{
+    display: grid;
+
+    .bg-image, .photo-profile{
+        grid-column: 1;
+        grid-row: 1;
+        max-width: 100%;
+    }
+    .bg-image{
+        border-radius: 0.625rem 0.625rem 0 0;
+        background-image: cover;
+    }
+    .photo-profile{
+        border-radius: 50%;
+        border: 5px solid white;
+        align-self: center;
+        justify-self: center;
+        margin-top: 5.3125rem;
+    }
+}
+
+
+
+.text-card{
+    background-color: white;
+    margin-top:-5.3125rem;
+    border-radius: 0 0 0.625rem 0.625rem;
+    @include flexCenter(column);
+    
+    h1{
+        padding-top: 3.8125rem;
+    }
+    .age{
+        color:$dark-gray;
+    }
+
+    .counter-card{
+        @include flexCenter(row);
+        border-top: 1px solid $dark-grayish-blue;
+
+    }
+}

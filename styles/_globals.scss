@@ -1,4 +1,4 @@
-html{
+    html{
     font-size: 100%;
     box-sizing: border-box;
 }
@@ -13,4 +13,7 @@ body{
     font-family: $principal-f;
     font-weight: 400;
     line-height: 1.5;
+
+    background-color: $dark-cyan;
 }
+
